@@ -1,0 +1,47 @@
+.btn{border-radius: 0px;}
+#container {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  background: #16a085;
+}
+#animate{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  /* background-color: red; */
+  background: url('../img/ahi.png');
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+}
+#gold, #gift{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+}
+#gold img{
+    background: transparent;
+    width:100%;
+    height: 100%;
+}
+#gift{background: url('../img/gift.gif');background-size: 50px 50px;}
+#heart{position: absolute;width: 120px;height: 40px;top:180px;left:-120px;z-index: 999999;background: #2ecc71;line-height: 40px;text-align: center;}
+#heart img{width: 40px;float: left;}
+#score,#pos{position: absolute;top:0;left:-120px;width: 120px;text-align: center;line-height: 60px;background: #e67e22;color:#fff;}
+#pos{background: #7f8c8d;top:60px;}
+.btn{width:60px;height: 50px;background: #3498db;border: 1px solid #2980b9;cursor: pointer;}
+
+.reset{margin: 0;padding:0;}
+.mgt2{margin-top: 2px;}
+.center{margin:0 auto;}
+.btn-t, .btn-b{margin-left: 107px;}
+.btn-l{margin-left: 47px;}
+.btn-r{margin-left: 51px;}
+.font20{font-size: 20px;}
+.score,.pos{background: #2980b9;padding: 7px;width: 140px;float: right;text-align: center;color: #fff;}
+.nut{background: #2980b9;padding: 7px;width: 140px;text-align: center;color: #fff;}
+.left{float: left;}
+.ting{display: none;}
+#ting{display: none;}
