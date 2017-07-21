@@ -38,10 +38,10 @@
 .center{margin:0 auto;}
 .btn-t, .btn-b{margin-left: 107px;}
 .btn-l{margin-left: 47px;}
-.btn-r{margin-left: 51px;}
+.btn-r{margin-left: 57px;}
 .font20{font-size: 20px;}
 .score,.pos{background: #2980b9;padding: 7px;width: 140px;float: right;text-align: center;color: #fff;}
 .nut{background: #2980b9;padding: 7px;width: 140px;text-align: center;color: #fff;}
 .left{float: left;}
 .ting{display: none;}
-#ting{display: none;}
+#ting,#ringring{display: none;}
