@@ -29,6 +29,10 @@
                 <div id ="container" class="left">
                     <div id="gold" style="top:{{stop}}px;left:{{sleft}}px;"><img src="lib/img/star.gif" alt=""></div>
                     <div id="gift" ng-show="showGift" style="top:{{gtop}}px;left:{{gleft}}px;"></div>
+                    <div class="boom" ng-show="showBoom1" style="top:{{b1top}}px;left:{{b1left}}px;"></div>
+                    <div class="boom" ng-show="showBoom2"  style="top:{{b2top}}px;left:{{b2left}}px;"></div>
+                    <div class="boom" ng-show="showBoom3"  style="top:{{b3top}}px;left:{{b3left}}px;"></div>
+
                     <div id ="animate"></div>
                 </div>
                 <div class="left">
@@ -40,6 +44,7 @@
                     
                     <div class="nut">
                         <div class="time">
+                            <span ng-show="heart<1" class="fa fa-frown-o fa-2x"></span>
                             <span ng-show="heart===3||heart===2||heart===1" class="fa fa-heart fa-2x"></span>
                             <span ng-show="heart===3||heart===2" class="fa fa-heart fa-2x"></span>
                             <span ng-show="heart===3" class="fa fa-heart fa-2x"></span>
@@ -71,6 +76,10 @@
 
     <audio controls  id="ringring">
       <source src="lib/mp3/ringring.wav" type="audio/wav">
+      Your browser does not support the audio tag.
+    </audio>
+    <audio controls  id="warningring">
+      <source src="lib/mp3/warning.wav" type="audio/wav">
       Your browser does not support the audio tag.
     </audio>
     <!-- <div id ="container" style="margin:0 auto;">

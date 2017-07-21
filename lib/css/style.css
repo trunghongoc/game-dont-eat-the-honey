@@ -14,7 +14,7 @@
   background-size: 50px 50px;
   background-repeat: no-repeat;
 }
-#gold, #gift{
+#gold, #gift, .boom{
   width: 50px;
   height: 50px;
   position: absolute;
@@ -27,6 +27,7 @@
     height: 100%;
 }
 #gift{background: url('../img/gift.gif');background-size: 50px 50px;}
+.boom{background: url('../img/shit.png');background-size: 50px 50px;}
 #heart{position: absolute;width: 120px;height: 40px;top:180px;left:-120px;z-index: 999999;background: #2ecc71;line-height: 40px;text-align: center;}
 #heart img{width: 40px;float: left;}
 #score,#pos{position: absolute;top:0;left:-120px;width: 120px;text-align: center;line-height: 60px;background: #e67e22;color:#fff;}
@@ -44,4 +45,4 @@
 .nut{background: #2980b9;padding: 7px;width: 140px;text-align: center;color: #fff;}
 .left{float: left;}
 .ting{display: none;}
-#ting,#ringring{display: none;}
+#ting,#ringring,#warningring{display: none;}
