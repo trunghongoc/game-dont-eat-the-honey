@@ -1,15 +1,12 @@
 <html ng-app="myApp">
 <head>
     <meta charset="utf-8">
-    <title>Đừng ăn cục cưng ))</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="lib/css/bootstrap.min.css">
     <link rel="stylesheet" href="lib/css/font-awesome.min.css">
-    <link rel="stylesheet" href="lib/css/animate.css">
     <link rel="stylesheet" href="lib/css/style.css">
     <script src="lib/js/jquery.min.js"></script>
     <script src="lib/js/bootstrap.min.js"></script>
-    <script src="lib/js/wow.min.js"></script>
     <script src="lib/js/angular.min.js"></script>
 </head>
 <body ng-controller="myCtrl"  ng-keydown="key($event)">
@@ -27,23 +24,16 @@
                 <div class="score">
                     <span class="fa fa-gift fa-2x"></span>&nbsp;&nbsp;<span class="font20">[{{stop}},{{sleft}}]</span>
                 </div>
-                <div class="clearfix"></div>
-                <div class="score">
-                    <span>Version: {{version}}</span>
-                </div>
             </div>
             <div class="col-md-8 reset">
                 <div id ="container" class="left">
                     <div id="gold" style="top:{{stop}}px;left:{{sleft}}px;"><img src="lib/img/star.gif" alt=""></div>
                     <div id="gift" ng-show="showGift" style="top:{{gtop}}px;left:{{gleft}}px;"></div>
-                    <div class="boomM" ng-show="showBoom" data-wow-iteration="infinite" data-wow-duration="500ms" ng-class="classBoom1" style="top:{{btop}}px;left:{{bleft}}px;"></div>
-                    <div class="boom" ng-show="showBoom1" data-wow-iteration="infinite" data-wow-duration="500ms" ng-class="classBoom1" style="top:{{b1top}}px;left:{{b1left}}px;"></div>
-                    <div class="boom" ng-show="showBoom2" data-wow-iteration="infinite" data-wow-duration="500ms" ng-class="classBoom2"  style="top:{{b2top}}px;left:{{b2left}}px;"></div>
-                    <div class="boom" ng-show="showBoom3" data-wow-iteration="infinite" data-wow-duration="500ms" ng-class="classBoom3"  style="top:{{b3top}}px;left:{{b3left}}px;"></div>
-                    <div class="boom" ng-show="showBoom4" data-wow-iteration="infinite" data-wow-duration="500ms" ng-class="classBoom4"  style="top:{{b4top}}px;left:{{b4left}}px;"></div>
-                    <div class="boom" ng-show="showBoom5" data-wow-iteration="infinite" data-wow-duration="500ms" ng-class="classBoom5"  style="top:{{b5top}}px;left:{{b5left}}px;"></div>
+                    <div class="boom" ng-show="showBoom1" style="top:{{b1top}}px;left:{{b1left}}px;"></div>
+                    <div class="boom" ng-show="showBoom2"  style="top:{{b2top}}px;left:{{b2left}}px;"></div>
+                    <div class="boom" ng-show="showBoom3"  style="top:{{b3top}}px;left:{{b3left}}px;"></div>
 
-                    <div id ="animate" style="background: url('lib/img/{{ currentAvartar }}');background-size: 50px 50px;"></div>
+                    <div id ="animate"></div>
                 </div>
                 <div class="left">
                     <div class="nut">
@@ -55,15 +45,9 @@
                     <div class="nut">
                         <div class="time">
                             <span ng-show="heart<1" class="fa fa-frown-o fa-2x"></span>
-                            <span ng-show="heart===3||heart===2||heart===1" class="fa fa-heart fa-2x icn_red wow pulse" data-wow-iteration="infinite" data-wow-duration="500ms"></span>
-                            <span ng-show="heart===3||heart===2" class="fa fa-heart fa-2x icn_red wow pulse" data-wow-iteration="infinite" data-wow-duration="500ms"></span>
-                            <span ng-show="heart===3" class="fa fa-heart fa-2x icn_red wow pulse" data-wow-iteration="infinite" data-wow-duration="500ms"></span>
-                        </div>
-                    </div>
-                    <div class="nut" style="cursor: pointer;background: #7f8c8d;"  data-toggle="modal" data-target="#nhanvat">
-                        <div class="time">
-                            <span class="fa fa-user-circle-o fa-2x"></span>
-                            <span>Chọn nhân vật</span>
+                            <span ng-show="heart===3||heart===2||heart===1" class="fa fa-heart fa-2x"></span>
+                            <span ng-show="heart===3||heart===2" class="fa fa-heart fa-2x"></span>
+                            <span ng-show="heart===3" class="fa fa-heart fa-2x"></span>
                         </div>
                     </div>
                     <div class="nut" ng-show="heart<1" style="background: #f39c12;text-align: left;cursor: pointer;">
@@ -104,14 +88,6 @@
       <source src="lib/mp3/warning.wav" type="audio/wav">
       Your browser does not support the audio tag.
     </audio>
-    <audio controls  id="lahet">
-      <source src="lib/mp3/lahet.wav" type="audio/wav">
-      Your browser does not support the audio tag.
-    </audio>
-    <audio controls  id="ketthuc">
-      <source src="lib/mp3/argh.wav" type="audio/wav">
-      Your browser does not support the audio tag.
-    </audio>
     
     <!-- Modal -->
       <div class="modal fade" id="myModal" role="dialog">
@@ -131,45 +107,7 @@
           </div>
         </div>
       </div>
-    <!-- Modal -->
-      <div class="modal fade" id="myModal2" role="dialog">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Chào mừng bạn đến với siêu phẩm GAME</h4>
-            </div>
-            <div class="modal-body">
-              <p>Đừng ăn cục cức ))</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Modal -->
-      <div class="modal fade" id="nhanvat" role="dialog">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Lựa hàng cho kỹ nha mấy má ))</h4>
-            </div>
-            <div class="modal-body">
-                <div ng-repeat="a in avatar" >
-                    <div ng-click="setAvatar($index)" class="nv" style="background: url('lib/img/{{a}}');"></div>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
     <script src="lib/js/app.js"></script>
-    <script>new WOW().init();</script>
 </body>
 
 </html>
