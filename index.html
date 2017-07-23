@@ -2,6 +2,7 @@
 <head>
     <meta charset="utf-8">
     <title>Đừng ăn cục cưng ))</title>
+    <link rel="shortcut icon" href="lib/img/shit.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="lib/css/bootstrap.min.css">
     <link rel="stylesheet" href="lib/css/font-awesome.min.css">
@@ -13,83 +14,137 @@
     <script src="lib/js/angular.min.js"></script>
 </head>
 <body ng-controller="myCtrl"  ng-keydown="key($event)">
+    <div id="gui"></div>        
+    <div id="canvas-container">
+      <div id="mountains2"></div>
+      <div id="mountains1"></div>
+      <div id="skyline"></div>
+    </div>
+<!--     <img src="lib/img/alert.png" alt=""> -->
+
     <div class="container">
         <div class="row">
-            <div class="col-md-3 reset">
-                <div class="score">
-                    <span class="fa fa-star-o fa-2x"></span>&nbsp;&nbsp;<span class="font20">{{score}}</span>
+            <div class="khungInfor">
+                <div class="divInfo">
+                    <div style="margin-top: 20px;"></div>
+                    <div class="text-center">
+                        <span class="fa fa-copyright fa-2x"></span>
+                    </div>
+                    <div class="text-center" style="margin-top: 2px;">
+                        <span>{{author}}</span>
+                    </div>
                 </div>
-                <div class="clearfix"></div>
-                <div class="score">
-                    <span class="fa fa-user-circle-o fa-2x"></span>&nbsp;&nbsp;<span class="font20">[{{mtop}},{{mleft}}]</span>
-                </div>
-                <div class="clearfix"></div>
-                <div class="score">
-                    <span class="fa fa-gift fa-2x"></span>&nbsp;&nbsp;<span class="font20">[{{stop}},{{sleft}}]</span>
-                </div>
-                <div class="clearfix"></div>
-                <div class="score">
-                    <span>Version: {{version}}</span>
-                </div>
-            </div>
-            <div class="col-md-8 reset">
-                <div id ="container" class="left">
-                    <div id="gold" style="top:{{stop}}px;left:{{sleft}}px;"><img src="lib/img/star.gif" alt=""></div>
-                    <div id="gift" ng-show="showGift" style="top:{{gtop}}px;left:{{gleft}}px;"></div>
-                    <div class="boomM" ng-show="showBoom" data-wow-iteration="infinite" data-wow-duration="500ms" ng-class="classBoom1" style="top:{{btop}}px;left:{{bleft}}px;"></div>
-                    <div class="boom" ng-show="showBoom1" data-wow-iteration="infinite" data-wow-duration="500ms" ng-class="classBoom1" style="top:{{b1top}}px;left:{{b1left}}px;"></div>
-                    <div class="boom" ng-show="showBoom2" data-wow-iteration="infinite" data-wow-duration="500ms" ng-class="classBoom2"  style="top:{{b2top}}px;left:{{b2left}}px;"></div>
-                    <div class="boom" ng-show="showBoom3" data-wow-iteration="infinite" data-wow-duration="500ms" ng-class="classBoom3"  style="top:{{b3top}}px;left:{{b3left}}px;"></div>
-                    <div class="boom" ng-show="showBoom4" data-wow-iteration="infinite" data-wow-duration="500ms" ng-class="classBoom4"  style="top:{{b4top}}px;left:{{b4left}}px;"></div>
-                    <div class="boom" ng-show="showBoom5" data-wow-iteration="infinite" data-wow-duration="500ms" ng-class="classBoom5"  style="top:{{b5top}}px;left:{{b5left}}px;"></div>
 
-                    <div id ="animate" style="background: url('lib/img/{{ currentAvartar }}');background-size: 50px 50px;"></div>
-                </div>
-                <div class="left">
-                    <div class="nut">
-                        <div class="time">
-                            <span class="fa fa-clock-o fa-2x"></span>&nbsp;&nbsp;<span class="font20">{{time}}</span>
-                        </div>
+                <div class="divInfo">
+                    <div style="margin-top: 20px;"></div>
+                    <div class="text-center">
+                        <span class="fa fa-star-o fa-2x"></span>&nbsp;&nbsp;<span class="font20">{{score}}</span>
                     </div>
-                    
-                    <div class="nut">
-                        <div class="time">
-                            <span ng-show="heart<1" class="fa fa-frown-o fa-2x"></span>
-                            <span ng-show="heart===3||heart===2||heart===1" class="fa fa-heart fa-2x icn_red wow pulse" data-wow-iteration="infinite" data-wow-duration="500ms"></span>
-                            <span ng-show="heart===3||heart===2" class="fa fa-heart fa-2x icn_red wow pulse" data-wow-iteration="infinite" data-wow-duration="500ms"></span>
-                            <span ng-show="heart===3" class="fa fa-heart fa-2x icn_red wow pulse" data-wow-iteration="infinite" data-wow-duration="500ms"></span>
-                        </div>
-                    </div>
-                    <div class="nut" style="cursor: pointer;background: #7f8c8d;"  data-toggle="modal" data-target="#nhanvat">
-                        <div class="time">
-                            <span class="fa fa-user-circle-o fa-2x"></span>
-                            <span>Chọn nhân vật</span>
-                        </div>
-                    </div>
-                    <div class="nut" ng-show="heart<1" style="background: #f39c12;text-align: left;cursor: pointer;">
-                        <div class="time">
-                            <span class="fa fa-refresh fa-2x"></span>
-                            <span ng-click="resetGame()">Chơi lại phát nữa</span>
-                        </div>
+                    <div class="text-center">
+                        <span>Version: {{version}}</span>
                     </div>
                 </div>
+                <div class="divInfo"  style="cursor: pointer;"  data-toggle="modal" data-target="#nhanvat">
+                    <div style="margin-top: 20px;"></div>
+                    <div class="text-center">
+                        <span class="fa fa-user-circle-o fa-2x"></span>
+                    </div>
+                    <div class="text-center" style="margin-top: 4px;">
+                        <p>Chọn nhân vật</p>
+                    </div>
+                </div>
+                <div class="divInfo">
+                    <div style="margin-top: 20px;"></div>
+                    <div class="text-center">
+                        <span class="fa fa-clock-o fa-2x"></span>&nbsp;&nbsp;<span class="font20">{{time}}</span>
+                    </div>
+                    <div class="text-center">
+                        <span ng-show="heart<1" class="fa fa-frown-o fa-2x"></span>
+                        <span ng-show="heart===3||heart===2||heart===1" class="fa fa-heart fa-2x icn_red wow pulse" data-wow-iteration="infinite" data-wow-duration="500ms"></span>
+                        <span ng-show="heart===3||heart===2" class="fa fa-heart fa-2x icn_red wow pulse" data-wow-iteration="infinite" data-wow-duration="500ms"></span>
+                        <span ng-show="heart===3" class="fa fa-heart fa-2x icn_red wow pulse" data-wow-iteration="infinite" data-wow-duration="500ms"></span>
+                    </div>
+                </div>
+
+                <div class="divInfo" ng-hide="heart<1">
+                    <div style="margin-top: 20px;"></div>
+                    <div class="text-center">
+                        <span class="fa fa-bell-o fa-2x"></span>
+                    </div>
+                    <div class="text-center" style="margin-top: 4px;">
+                        <div style="width: 140px;margin: 0 auto;"><span>{{alert[0]}}</span></div>
+                        
+                    </div>
+                </div>
+
+                <div class="divInfo"  ng-click="resetGame()" ng-show="heart<1" style="cursor: pointer;">
+                    <div style="margin-top: 20px;"></div>
+                    <div class="text-center">
+                        <span class="fa fa-refresh fa-2x"></span>
+                    </div>
+                    <div class="text-center" style="margin-top: 4px;">
+                        <span>Chơi lại phát nữa</span>
+                    </div>
+                </div>
+
                 <div class="clearfix"></div>
-                
             </div>
-            <div class="col-md-3"></div>
         </div>
 
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <div class="mgt2"></div>
-                <div class="center">
-                    <button class="btn btn-info btn-t btn-arrow" ng-click="setMpos('t')"><span class="fa fa-chevron-up fa-2x"></span></button><br>
-                    <button class="btn btn-info btn-l btn-arrow" ng-click="setMpos('l')"><span class="fa fa-chevron-left fa-2x"></span></button>
-                    <button class="btn btn-info btn-r btn-arrow" ng-click="setMpos('r')"><span class="fa fa-chevron-right fa-2x"></span></button><br>
-                    <button class="btn btn-info btn-b btn-arrow" ng-click="setMpos('b')"><span class="fa fa-chevron-down fa-2x"></span></button>
+            <div class="bodyGame">
+                <div class="bgBodyGame">
+                    <div id ="container" class="left">
+                        <div id="gold" style="top:{{stop}}px;left:{{sleft}}px;"><img src="lib/img/star.gif" alt=""></div>
+                        <div id="gift" ng-show="showGift" style="top:{{gtop}}px;left:{{gleft}}px;"></div>
+                        <div id="giftheart" ng-show="showHeart" style="top:{{htop}}px;left:{{hleft}}px;">
+                            <div class="wow pulse"  aria-hidden="true"  data-wow-iteration="infinite" data-wow-duration="500ms">
+                                <div class="giftheart"></div>
+                            </div>
+                        </div>
+                        <div class="wow pulse" ng-class="classBOOM" aria-hidden="true"  data-wow-iteration="infinite" data-wow-duration="500ms">
+                            <div class="boomM" ng-show="showSuperBoom" style="top:{{btop}}px;left:{{bleft}}px;"></div>
+                        </div>
+                        <div class="boom" ng-show="showBoom1" data-wow-iteration="infinite" data-wow-duration="500ms" ng-class="classBoom1" style="top:{{b1top}}px;left:{{b1left}}px;"></div>
+                        <div class="boom" ng-show="showBoom2" data-wow-iteration="infinite" data-wow-duration="500ms" ng-class="classBoom2"  style="top:{{b2top}}px;left:{{b2left}}px;"></div>
+                        <div class="boom" ng-show="showBoom3" data-wow-iteration="infinite" data-wow-duration="500ms" ng-class="classBoom3"  style="top:{{b3top}}px;left:{{b3left}}px;"></div>
+                        <div class="boom" ng-show="showBoom4" data-wow-iteration="infinite" data-wow-duration="500ms" ng-class="classBoom4"  style="top:{{b4top}}px;left:{{b4left}}px;"></div>
+                        <div class="boom" ng-show="showBoom5" data-wow-iteration="infinite" data-wow-duration="500ms" ng-class="classBoom5"  style="top:{{b5top}}px;left:{{b5left}}px;"></div>
+                        <div class="nhieuBoom" ng-show="nhieuBoom1Show" style="top:{{nhieuBoom1top}}px;left:{{nhieuBoom1left}}px;"></div>
+                        <div class="nhieuBoom" ng-show="nhieuBoom2Show" style="top:{{nhieuBoom2top}}px;left:{{nhieuBoom2left}}px;"></div>
+                        <div class="nhieuBoom" ng-show="nhieuBoom3Show" style="top:{{nhieuBoom3top}}px;left:{{nhieuBoom3left}}px;"></div>
+
+                        <div id ="animate" style="background: url('lib/img/{{ currentAvartar }}');background-size: 50px 50px;"></div>
+                    </div>
                 </div>
-            </div>
+
+                <div class="divGAMEname">
+                    <div style="margin-top: 45px;"></div>
+                    <div class="text-center">
+                        <span  style="color: #fff;">GAME: đừng ăn cục cức ))</span>
+                    </div>
+                </div>
+                
+                <div class="divAlert text-center">
+                    <div  ng-repeat="a in alert track by $index">
+                        <i class="fa fa-bell-o" aria-hidden="true" ng-show="a != ''"></i>&nbsp;
+                        <span>{{a}}</span>
+                    </div>                
+                </div>
+
+                
+                <div class="nutDieukhien">
+                    <div class="center">
+                        <button class="btn btn-info btn-t btn-arrow" ng-click="setMpos('t')"><span class="fa fa-chevron-up fa-2x"></span></button><br>
+                        <button class="btn btn-info btn-l btn-arrow" ng-click="setMpos('l')"><span class="fa fa-chevron-left fa-2x"></span></button>
+                        <button class="btn btn-info btn-r btn-arrow" ng-click="setMpos('r')"><span class="fa fa-chevron-right fa-2x"></span></button><br>
+                        <button class="btn btn-info btn-b btn-arrow" ng-click="setMpos('b')"><span class="fa fa-chevron-down fa-2x"></span></button>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div> 
         </div>
+
     </div>
     <audio controls  id="ting">
       <source src="lib/mp3/cash2.wav" type="audio/wav">
@@ -112,62 +167,80 @@
       <source src="lib/mp3/argh.wav" type="audio/wav">
       Your browser does not support the audio tag.
     </audio>
-    
+    <audio controls  id="eatHeart">
+      <source src="lib/mp3/bell2.wav" type="audio/wav">
+      Your browser does not support the audio tag.
+    </audio>
+    <audio controls  id="xuatHienHeart">
+      <source src="lib/mp3/ff-dings.wav" type="audio/wav">
+      Your browser does not support the audio tag.
+    </audio>
+    <audio controls  id="votay">
+      <source src="lib/mp3/applause_y.wav" type="audio/wav">
+      Your browser does not support the audio tag.
+    </audio>
+    <audio controls  id="chaomung">
+      <source src="lib/mp3/TBELL2.WAV" type="audio/WAV">
+      Your browser does not support the audio tag.
+    </audio>
     <!-- Modal -->
-      <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal fade modalPaper" id="myModal" role="dialog">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">{{modalHeader}}</h4>
-            </div>
             <div class="modal-body">
-              <p>Bạn đã ăn cục c*t quá nhiều lần ))</p>
-              <button class='btn btn-warning' ng-click="resetGame()"><span></span>&nbsp;Chơi lại phát nữa</button>
+                <div style="margin-top: 100px;"></div>
+                <div class="plate full">
+                  <p class="shadow text3">Game Over</p>
+                  <h3 class="text-center">Bạn đã ăn quá nhiều cức rồi ))</span></h3>
+                </div>
+              
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button class='btn btn-warning resetGame' ng-click="resetGame()"><span></span>&nbsp;Chơi lại phát nữa</button>
+                <button type="button" class="btn btn-default closeOvergame" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
       </div>
     <!-- Modal -->
-      <div class="modal fade" id="myModal2" role="dialog">
+      <div class="modal fade modalPaper" id="myModal2" role="dialog">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Chào mừng bạn đến với siêu phẩm GAME</h4>
+            <div class="modal-body text-center full">
+                <div class="plate full">
+                  <p class="script"><span>welcome to</span></p>
+                  <p class="shadow text1">DONT</p>
+                  <p class="shadow text2">EAT</p>
+                  <p class="shadow text3">THE SHITs</p>
+                  <p class="script"><span>Super Game</span></p>
+                </div>
             </div>
-            <div class="modal-body">
-              <p>Đừng ăn cục cức ))</p>
-            </div>
-            <div class="modal-footer">
+            <div class="modal-footer full">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
       </div>
       <!-- Modal -->
-      <div class="modal fade" id="nhanvat" role="dialog">
+      <div class="modal fade modalPaper" id="nhanvat" role="dialog">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Lựa hàng cho kỹ nha mấy má ))</h4>
-            </div>
-            <div class="modal-body">
-                <div ng-repeat="a in avatar" >
-                    <div ng-click="setAvatar($index)" class="nv" style="background: url('lib/img/{{a}}');"></div>
+            <div class="modal-body full">
+                <div class="w550">
+                    <div ng-repeat="a in avatar" >
+                        <div ng-click="setAvatar($index)" class="nv" style="background: url('lib/img/{{a}}');background-repeat: no-repeat;"></div>
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
-                <div class="clearfix"></div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <div class="modal-footer full">
+              <button type="button" class="btn btn-default closeNhanvat" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
       </div>
+    
+    <script src="lib/js/firework.js"></script>
     <script src="lib/js/app.js"></script>
     <script>new WOW().init();</script>
 </body>

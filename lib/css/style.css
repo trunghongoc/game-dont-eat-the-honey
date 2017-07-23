@@ -1,10 +1,18 @@
 .btn,.modal,.modal-header,.modal-content{border-radius: 0px;}
+.bodyGame{width: 800px;margin: 0 auto;}
+.bgBodyGame{width: 540px;height:540px;background: url('../img/bodygame.png');background-size: 540px 540px;background-repeat: no-repeat;float: left;}
+.khungInfor{width: 800px;margin: 0 auto;}
+.divGAMEname{width: 200px;height: 76px;background: url('../img/alert.png');background-size: 200px 76px;background-repeat: no-repeat;float: left;margin-left: 50px;margin-top: 10px;}
+.divAlert{margin-top: 40px;margin-left:  10px;color: #eee;float: left;width: 250px;padding-bottom: 3px;height: 200px;}
 #container {
   width: 500px;
   height: 500px;
   position: relative;
-  background: #16a085;
+  /*background: #16a085;*/
+
+  margin: 20px 0 0 20px;
 }
+.nutDieukhien{float: left;margin-left: 10px!important;}
 #animate{
   width: 50px;
   height: 50px;
@@ -26,26 +34,159 @@
     width:100%;
     height: 100%;
 }
+.divInfo{float: left;width: 160px;height: 108px;background: url('../img/khung1.png');background-size: 160px 108px;background-repeat: no-repeat;}
 #gift{background: url('../img/gift.gif');background-size: 50px 50px;}
+#giftheart{position: absolute;}
+.giftheart{width: 50px;height: 50px;background: url('../img/heart.png');background-repeat: no-repeat;background-size: 50px 50px;}
 .boom{background: url('../img/shit.png');background-size: 50px 50px;}
 .boomM{width: 100px;height: 100px;background: url('../img/shit.png');background-size: 100px 100px;}
 #heart{position: absolute;width: 120px;height: 40px;top:180px;left:-120px;z-index: 999999;background: #2ecc71;line-height: 40px;text-align: center;}
 #heart img{width: 40px;float: left;}
 #score,#pos{position: absolute;top:0;left:-120px;width: 120px;text-align: center;line-height: 60px;background: #e67e22;color:#fff;}
-#pos{background: #7f8c8d;top:60px;}
+#pos{}
 .btn-arrow{width:60px;height: 50px;background: #3498db;border: 1px solid #2980b9;cursor: pointer;}
+.nhieuBoom{width: 250px;height: 50px;background: url('../img/shit.png');background-size: 50px 50px;position: absolute;}
 
 .reset{margin: 0;padding:0;}
 .mgt2{margin-top: 2px;}
 .center{margin:0 auto;}
-.btn-t, .btn-b{margin-left: 107px;}
+.btn-t, .btn-b{margin-left: 108px;}
 .btn-l{margin-left: 47px;}
 .btn-r{margin-left: 57px;}
 .font20{font-size: 20px;}
-.score,.pos{background: #2980b9;padding: 7px;width: 140px;float: right;text-align: center;color: #fff;}
-.nut{background: #2980b9;padding: 7px;width: 160px;text-align: center;color: #fff;}
+.pos{background: #2980b9;padding: 7px;width: 140px;float: right;text-align: center;color: #fff;}
+.score {text-align: center;}
+.nut{}
 .left{float: left;}
 .ting{display: none;}
-#ting,#ringring,#warningring,#lahet,#ketthuc{display: none;}
+#ting,#ringring,#warningring,#lahet,#ketthuc,#eatHeart,#xuatHienHeart,#votay,#chaomung{display: none;}
 .icn_red{color: #e74c3c;}
 .nv{width: 60px;height: 60px;background-size: 60px 60px!important;background-repeat: no-repeat;float: left;margin-left:5px;cursor: pointer;}
+#canvas-container {
+    background: #000 url(https://jackrugile.com/lab/fireworks-v2/images/bg.jpg);
+  height: 100%;
+    left: 0;
+    /*margin: -200px 0 0 -300px;*/
+    position: fixed;
+    top: 0;
+  width: 100%;
+    z-index: -9999;
+}
+        
+canvas {
+    cursor: crosshair;
+    display: block;
+    position: fixed;
+    z-index: -99;
+}
+
+canvas:active {
+    cursor: crosshair;
+}
+
+#skyline {
+    background: url(https://jackrugile.com/lab/fireworks-v2/images/skyline.png) repeat-x 50% 0;
+    bottom: 0;
+    height: 135px;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: -99;
+}
+
+#mountains1 {
+    background: url(https://jackrugile.com/lab/fireworks-v2/images/mountains1.png) repeat-x 40% 0;
+    bottom: 0;
+    height: 200px;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: -99;
+}
+
+#mountains2 {
+    /*background: url(https://jackrugile.com/lab/fireworks-v2/images/mountains2.png) repeat-x 30% 0;*/
+    top: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: -99;
+}
+
+#gui {
+    right: 0;
+    position: fixed;
+    top: 0;
+   z-index: -99;
+}
+.fff{color: #fff;}
+.modalPaper, .modalPaper div{border: 0px solid #ccc;background: transparent;box-shadow: 0 0 0 #888888;}
+.modalPaper .modal-title{margin-top: 60px;}
+.modalPaper .modal-content{width: 600px;height: 406px;margin: 0 auto;}
+.modalPaper div.full{width: 100%;}
+.modalPaper .modal-content {background: url('../img/paper.png');background-size: 600px 406px;background-repeat: no-repeat;}
+.modalPaper .modal-content .modal-header,.modalPaper .modal-content .modal-footer{margin-top: 0px;border:0px solid #ccc;}
+.modalPaper .modal-content .modal-footer{margin: 0;padding:0;position: relative;}
+.modalPaper .modal-content .modal-footer button{position: absolute;top:-40px;right: 97px;z-index: 9999999999;}
+.modalPaper .modal-content .modal-footer button.closeNhanvat{position: absolute;top:70px;right: 97px;z-index: 9999999999;}
+.modalPaper .modal-content .modal-footer button.closeOvergame{position: absolute;top:10px;right: 97px;z-index: 9999999999;}
+.modalPaper .modal-content .modal-footer button.resetGame{position: absolute;top:10px;right: 190px;z-index: 9999999999;}
+.w550{width: 500px;margin: 0 auto;margin-top: 100px;}
+@import url('https://fonts.googleapis.com/css?family=Arvo:700');
+@import url('https://fonts.googleapis.com/css?family=Seaweed+Script');
+.plate {
+  width: 410px;
+  margin: 7% auto;
+}
+.shadow {
+  color: #3498db;
+  font-family: Arvo;
+  font-weight: bold;
+  text-shadow:
+    -3px -3px 0 #222,
+    3px -3px 0 #222,
+    -3px 3px 0 #222,
+    3px 3px 0 #222,
+    4px 4px 0 #fff,
+    5px 5px 0 #fff,
+    6px 6px 0 #fff,
+    7px 7px 0 #fff;
+  line-height: 0.8em;
+  letter-spacing: 0.1em;
+  transform: scaleY(0.7);
+  -webkit-transform: scaleY(0.7);
+  -moz-transform: scaleY(0.7);
+  margin:0;
+  text-align: center;
+}
+.script {
+  font-family: "Seaweed Script";
+  color: #fff;
+  text-align: center;
+  font-size: 40px;
+  position: relative;
+  margin:0;
+}
+.script span {
+  background-color: #222;
+  padding: 0 0.3em;
+}
+.script:before {
+  content:"";
+  display: block;
+  position: absolute;
+  z-index:-1;
+  top: 50%;
+  width: 100%;
+  border-bottom: 3px solid #fff;
+}
+.text1 {
+  font-size: 40px;
+}
+.text2 {
+  font-size: 80px;
+}
+.text3 {
+  font-size: 70px;
+}

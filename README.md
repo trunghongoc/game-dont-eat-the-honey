@@ -1,2 +1,2 @@
 # game-sanmoi
-demo game san moi
+demo game dont eat the honey
